@@ -28,7 +28,7 @@
 
 	<servlet-mapping>
 		<servlet-name>ControllerServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
 
 	<error-page>

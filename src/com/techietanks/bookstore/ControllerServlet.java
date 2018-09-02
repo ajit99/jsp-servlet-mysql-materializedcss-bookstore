@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * ControllerServlet.java
- * This servlet acts as a page controller for the application, handling all
- * requests from the user.
- * @author www.codejava.net
- */
 public class ControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private BookDAO bookDAO;
@@ -43,19 +37,19 @@ public class ControllerServlet extends HttpServlet {
 
 		try {
 			switch (action) {
-			case "/new":
+			case "/new.htm":
 				showNewForm(request, response);
 				break;
-			case "/insert":
+			case "/insert.htm":
 				insertBook(request, response);
 				break;
-			case "/delete":
+			case "/delete.htm":
 				deleteBook(request, response);
 				break;
-			case "/edit":
+			case "/edit.htm":
 				showEditForm(request, response);
 				break;
-			case "/update":
+			case "/update.htm":
 				updateBook(request, response);
 				break;
 			default:
@@ -99,7 +93,7 @@ public class ControllerServlet extends HttpServlet {
 
 		Book newBook = new Book(title, author, price);
 		bookDAO.insertBook(newBook);
-		response.sendRedirect("list");
+		response.sendRedirect("list.htm");
 	}
 
 	private void updateBook(HttpServletRequest request, HttpServletResponse response) 
@@ -111,7 +105,7 @@ public class ControllerServlet extends HttpServlet {
 
 		Book book = new Book(id, title, author, price);
 		bookDAO.updateBook(book);
-		response.sendRedirect("list");
+		response.sendRedirect("list.htm");
 	}
 
 	private void deleteBook(HttpServletRequest request, HttpServletResponse response) 
@@ -120,7 +114,7 @@ public class ControllerServlet extends HttpServlet {
 
 		Book book = new Book(id);
 		bookDAO.deleteBook(book);
-		response.sendRedirect("list");
+		response.sendRedirect("list.htm");
 
 	}
 

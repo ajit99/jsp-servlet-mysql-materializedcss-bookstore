@@ -9,13 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * AbstractDAO.java
- * This DAO class provides CRUD database operations for the table book
- * in the database.
- * @author www.codejava.net
- *
- */
 public class BookDAO {
 	private String jdbcURL;
 	private String jdbcUsername;
